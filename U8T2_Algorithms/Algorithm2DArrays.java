@@ -212,6 +212,15 @@ public class Algorithm2DArrays {
             if (sumForColumn(arr, i) != sum) {
                 return false;
             }
+            for (int j = 0; j < arr.length; j++) {
+                for (int a = 0; a < arr.length; a++) {
+                    for (int b = 0; b < arr.length; b++) {
+                        if ((j != b || i != a) && arr[i][j] == arr[a][b]) {
+                            return false;
+                        }
+                    }
+                }
+            }
         }
         if (diagonalOne != sum || diagonalTwo != sum) {
             return false;
